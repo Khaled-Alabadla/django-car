@@ -1,4 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h3>Add page</h3>
+  <div class="my-4">
+    <h3 class="mb-3">
+      {% if car %}
+        Edit Car
+      {% else %}
+        Add Car
+      {% endif %}
+    </h3>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.errors %}
+            <div class="text-danger small">{{ field.errors|striptags }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary" type="submit">
+          {% if car %}
+            Update
+          {% else %}
+            Create
+          {% endif %}
+        </button>
+        <a class="btn btn-outline-secondary" href="{% url 'lists' %}">Cancel</a>
+      </div>
+    </form>
+  </div>
 {% endblock %}
