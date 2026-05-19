@@ -30,9 +30,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-5. Visit:
-
-- App: http://127.0.0.1:8000/
+5. Visit app in:http://127.0.0.1:8000/
 
 ## Files to know
 
