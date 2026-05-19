@@ -12,10 +12,10 @@ A simple Django app to manage cars with brand and year.
 
 1. Create and activate a virtual environment:
 
-2. Install dependencies:
+2. Install django:
 
 ```bash
-pip install -r requirements.txt
+pip install django
 ```
 
 3. Run migrations:
